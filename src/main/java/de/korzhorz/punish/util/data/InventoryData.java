@@ -1,4 +1,4 @@
-package de.korzhorz.template.util.data;
+package de.korzhorz.punish.util.data;
 
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;

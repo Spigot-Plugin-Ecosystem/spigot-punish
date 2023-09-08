@@ -1,15 +1,15 @@
-package de.korzhorz.template;
+package de.korzhorz.punish;
 
-import de.korzhorz.template.configs.ConfigFiles;
-import de.korzhorz.template.util.database.DatabaseTableUtil;
-import de.korzhorz.template.util.bungeecord.PluginChannelEvent;
-import de.korzhorz.template.util.bungeecord.PluginChannelInitiator;
-import de.korzhorz.template.util.bungeecord.PluginChannelUtil;
-import de.korzhorz.template.util.database.MySQLUtil;
-import de.korzhorz.template.util.data.Command;
-import de.korzhorz.template.util.messages.CTUtil;
-import de.korzhorz.template.util.meta.Data;
-import de.korzhorz.template.util.meta.GitHubUpdater;
+import de.korzhorz.punish.configs.ConfigFiles;
+import de.korzhorz.punish.util.database.DatabaseTableUtil;
+import de.korzhorz.punish.util.bungeecord.PluginChannelEvent;
+import de.korzhorz.punish.util.bungeecord.PluginChannelInitiator;
+import de.korzhorz.punish.util.bungeecord.PluginChannelUtil;
+import de.korzhorz.punish.util.database.MySQLUtil;
+import de.korzhorz.punish.util.data.Command;
+import de.korzhorz.punish.util.messages.CTUtil;
+import de.korzhorz.punish.util.meta.Data;
+import de.korzhorz.punish.util.meta.GitHubUpdater;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.command.PluginCommand;

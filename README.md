@@ -1,12 +1,12 @@
 # Plugin-Template
 
 ## TODO
-- [ ] Package umbenennen
-- [ ] `pom.xml` bearbeiten
+- [X] Package umbenennen
+- [X] `pom.xml` bearbeiten
   - `artifactId`: Name des Plugins
   - `name`: Name des Plugins
   - `version`: Versionsnummer des Plugins (semantische Versionierung)
-- [ ] `plugin.yml` bearbeiten
+- [X] `plugin.yml` bearbeiten
   - Name des Plugins
   - package der `Main`-Klasse
 - [ ] `PluginConfig` bearbeiten

@@ -1,4 +1,4 @@
-package de.korzhorz.template.util.meta;
+package de.korzhorz.punish.util.meta;
 
 public class Data {
     public static boolean bungeeCord = false;

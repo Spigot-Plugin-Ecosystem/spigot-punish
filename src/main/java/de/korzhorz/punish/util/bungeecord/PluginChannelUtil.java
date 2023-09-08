@@ -1,8 +1,8 @@
-package de.korzhorz.template.util.bungeecord;
+package de.korzhorz.punish.util.bungeecord;
 
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
-import de.korzhorz.template.Main;
+import de.korzhorz.punish.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;

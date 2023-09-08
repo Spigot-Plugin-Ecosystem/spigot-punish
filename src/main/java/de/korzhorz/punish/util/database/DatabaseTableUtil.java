@@ -1,4 +1,4 @@
-package de.korzhorz.template.util.database;
+package de.korzhorz.punish.util.database;
 
 public class DatabaseTableUtil {
     public void createTable() {

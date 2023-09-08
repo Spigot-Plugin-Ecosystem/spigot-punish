@@ -1,6 +1,6 @@
-package de.korzhorz.template.util.database;
+package de.korzhorz.punish.util.database;
 
-import de.korzhorz.template.configs.ConfigFiles;
+import de.korzhorz.punish.configs.ConfigFiles;
 
 import java.sql.Connection;
 

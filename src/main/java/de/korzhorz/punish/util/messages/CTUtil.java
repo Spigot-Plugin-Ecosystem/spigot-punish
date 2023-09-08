@@ -1,4 +1,4 @@
-package de.korzhorz.template.util.messages;
+package de.korzhorz.punish.util.messages;
 
 import org.bukkit.ChatColor;
 

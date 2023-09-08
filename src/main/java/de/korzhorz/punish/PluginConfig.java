@@ -1,8 +1,8 @@
-package de.korzhorz.template;
+package de.korzhorz.punish;
 
-import de.korzhorz.template.util.database.DatabaseTableUtil;
-import de.korzhorz.template.util.bungeecord.PluginChannelEvent;
-import de.korzhorz.template.util.data.Command;
+import de.korzhorz.punish.util.database.DatabaseTableUtil;
+import de.korzhorz.punish.util.bungeecord.PluginChannelEvent;
+import de.korzhorz.punish.util.data.Command;
 import org.bukkit.event.Listener;
 
 public class PluginConfig {

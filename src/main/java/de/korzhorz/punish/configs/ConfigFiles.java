@@ -1,7 +1,7 @@
-package de.korzhorz.template.configs;
+package de.korzhorz.punish.configs;
 
-import de.korzhorz.template.Main;
-import de.korzhorz.template.PluginConfig;
+import de.korzhorz.punish.Main;
+import de.korzhorz.punish.PluginConfig;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.text.SimpleDateFormat;

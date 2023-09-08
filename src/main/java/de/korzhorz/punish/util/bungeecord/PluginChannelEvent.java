@@ -1,4 +1,4 @@
-package de.korzhorz.template.util.bungeecord;
+package de.korzhorz.punish.util.bungeecord;
 
 import com.google.common.io.ByteArrayDataInput;
 

@@ -1,4 +1,4 @@
-package de.korzhorz.template.util.game;
+package de.korzhorz.punish.util.game;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;

@@ -1,6 +1,6 @@
-package de.korzhorz.template.util.messages;
+package de.korzhorz.punish.util.messages;
 
-import de.korzhorz.template.configs.ConfigFiles;
+import de.korzhorz.punish.configs.ConfigFiles;
 
 public class Messages {
     private Messages() {

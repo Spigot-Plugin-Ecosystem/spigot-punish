@@ -1,11 +1,11 @@
-package de.korzhorz.template.util.meta;
+package de.korzhorz.punish.util.meta;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import de.korzhorz.template.Main;
-import de.korzhorz.template.PluginConfig;
-import de.korzhorz.template.configs.ConfigFiles;
-import de.korzhorz.template.util.messages.CTUtil;
+import de.korzhorz.punish.Main;
+import de.korzhorz.punish.PluginConfig;
+import de.korzhorz.punish.configs.ConfigFiles;
+import de.korzhorz.punish.util.messages.CTUtil;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.*;
