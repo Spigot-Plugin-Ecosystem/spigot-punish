@@ -6,12 +6,12 @@ import de.korzhorz.punish.util.data.Command;
 import org.bukkit.event.Listener;
 
 public class PluginConfig {
-    public static String pluginName = "Template";
+    public static String pluginName = "Punish";
 
     public static boolean requireBungeeCord = false;
-    public static boolean pluginChannels = false;
-    public static boolean mySql = false;
-    public static boolean requireMySql = false;
+    public static boolean pluginChannels = true;
+    public static boolean mySql = true;
+    public static boolean requireMySql = true;
 
     public static PluginChannelEvent[] pluginChannelEvents = new PluginChannelEvent[]{
 
@@ -27,7 +27,7 @@ public class PluginConfig {
     };
 
     public static String gitHubUser = "Spigot-Plugin-Ecosystem";
-    public static String gitHubRepo = "plugin-template-spigot";
+    public static String gitHubRepo = "spigot-punish";
 
     private PluginConfig() {
 
