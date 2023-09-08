@@ -3,4 +3,7 @@ version: '${project.version}'
 main: de.korzhorz.punish.Main
 api-version: 1.20
 commands:
-
+  punish:
+    description: Punish a player
+    usage: /punish <player> <reason>
+    permission: punish.punish
