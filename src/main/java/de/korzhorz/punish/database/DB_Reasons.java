@@ -100,7 +100,7 @@ public class DB_Reasons extends DatabaseTableUtil {
         return null;
     }
 
-    public void addReason(PunishReason punishReason) {
+    public void saveReason(PunishReason punishReason) {
         if(!this.requireDatabaseConnection()) {
             return;
         }
