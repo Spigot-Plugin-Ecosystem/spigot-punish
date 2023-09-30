@@ -1,5 +1,6 @@
 package de.korzhorz.punish;
 
+import de.korzhorz.punish.commands.CMD_Punish;
 import de.korzhorz.punish.database.DB_Reasons;
 import de.korzhorz.punish.util.database.DatabaseTableUtil;
 import de.korzhorz.punish.util.bungeecord.PluginChannelEvent;
@@ -21,7 +22,7 @@ public class PluginConfig {
         DB_Reasons.getInstance()
     };
     public static Command[] commands = new Command[]{
-
+        new Command("punish", new CMD_Punish())
     };
     public static Listener[] listeners = new Listener[]{
 
