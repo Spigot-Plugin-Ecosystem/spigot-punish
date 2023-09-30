@@ -35,7 +35,7 @@ public class DB_Reasons extends DatabaseTableUtil {
         sql += "`reasonId` INT(11) NOT NULL PRIMARY KEY,";
         sql += "`reasonName` VARCHAR(63) NOT NULL DEFAULT \"\",";
         sql += "`punishType` INT(11) NOT NULL DEFAULT 0,";
-        sql += "`punishDuration` INT(11) NULL DEFAULT 604800";
+        sql += "`punishDuration` BIGINT(20) NULL DEFAULT 604800";
         sql += ");";
 
         try(PreparedStatement preparedStatement = MySQLUtil.getConnection().prepareStatement(sql)) {
@@ -89,7 +89,7 @@ public class DB_Reasons extends DatabaseTableUtil {
                 int reasonId = result.getInt("reasonId");
                 String reasonName = result.getString("reasonName");
                 PunishType punishType = PunishType.fromType(result.getInt("punishType"));
-                int punishDuration = result.getInt("punishDuration");
+                long punishDuration = result.getLong("punishDuration");
 
                 return new PunishReason(reasonId, reasonName, punishType, punishDuration);
             }
@@ -111,7 +111,7 @@ public class DB_Reasons extends DatabaseTableUtil {
             preparedStatement.setInt(1, punishReason.getReasonId());
             preparedStatement.setString(2, punishReason.getReasonName());
             preparedStatement.setInt(3, punishReason.getPunishType().getType());
-            preparedStatement.setInt(4, punishReason.getPunishDuration());
+            preparedStatement.setLong(4, punishReason.getPunishDuration());
 
             preparedStatement.executeUpdate();
         } catch(SQLException e) {
