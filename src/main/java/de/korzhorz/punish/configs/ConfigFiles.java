@@ -34,6 +34,11 @@ public class ConfigFiles {
         messages.setDefault("commands.errors.no-permission", "&cDu hast keine Rechte um diesen Befehl auszuführen.");
         messages.setDefault("commands.errors.bad-usage", "&cBenutze: &7%usage%");
         messages.setDefault("commands.errors.save-failed", "&cDie Änderungen konnten nicht gespeichert werden.");
+        messages.setDefault("commands.errors.reason-not-found", "&cDer Punish-Grund konnte nicht gefunden werden.");
+        messages.setDefault("commands.errors.player-not-found", "&cDer Spieler konnte nicht gefunden werden.");
+
+        messages.setDefault("commands.punish.initial", "&cDer Spieler &e%player% &cwurde bestraft.");
+        messages.setDefault("commands.punish.override", "&cDer Spieler &e%player% &cwurde bestraft. &7(Überschrieben)");
 
         messages.save();
 
