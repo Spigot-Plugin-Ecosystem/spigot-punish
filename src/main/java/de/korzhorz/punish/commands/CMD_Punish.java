@@ -4,14 +4,18 @@ import de.korzhorz.punish.data.PunishPunishment;
 import de.korzhorz.punish.data.PunishReason;
 import de.korzhorz.punish.database.DB_Punishments;
 import de.korzhorz.punish.database.DB_Reasons;
+import de.korzhorz.punish.util.UUIDFormatter;
+import de.korzhorz.punish.util.game.PlayerUtil;
 import de.korzhorz.punish.util.messages.CTUtil;
 import de.korzhorz.punish.util.messages.Messages;
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.UUID;
 
@@ -30,7 +34,7 @@ public class CMD_Punish implements CommandExecutor {
             return true;
         }
 
-        String playerName = args[0];
+        String punishedPlayerName = args[0];
         String reasonIdString = args[1];
 
         try {
@@ -42,14 +46,20 @@ public class CMD_Punish implements CommandExecutor {
                 return true;
             }
 
-            Player punishedPlayer = Bukkit.getPlayer(playerName);
+            String punishedPlayerUuid = "";
+            try {
+                punishedPlayerUuid = PlayerUtil.getUuid(punishedPlayerName);
+            } catch(IllegalArgumentException | IOException e) {
+                Player player = Bukkit.getPlayerExact(punishedPlayerName);
+                if(player == null) {
+                    sender.sendMessage(CTUtil.translate(Messages.get("prefix") + "&r " + Messages.get("commands.errors.player-not-found")));
+                    return true;
+                }
 
-            if(punishedPlayer == null) {
-                sender.sendMessage(CTUtil.translate(Messages.get("prefix") + "&r " + Messages.get("commands.errors.player-not-found")));
-                return true;
+                punishedPlayerUuid = player.getUniqueId().toString();
             }
 
-            UUID punishedPlayerUuid = punishedPlayer.getUniqueId();
+            punishedPlayerUuid = UUIDFormatter.formatUuid(punishedPlayerUuid);
 
             Date punishStart = new Date();
             Date punishEnd = new Date(punishStart.getTime() + (punishReason.getPunishDuration() * 1000));
@@ -57,19 +67,29 @@ public class CMD_Punish implements CommandExecutor {
                 punishEnd = null;
             }
 
-            PunishPunishment punishment = new PunishPunishment(punishedPlayerUuid.toString(), punishReason.getReasonId(), punishStart, punishEnd);
+            PunishPunishment punishment = new PunishPunishment(punishedPlayerUuid, punishReason.getReasonId(), punishStart, punishEnd);
 
-            boolean override = DB_Punishments.getInstance().getPunishment(punishedPlayer) != null;
+            boolean override = DB_Punishments.getInstance().getPunishment(punishedPlayerUuid) != null;
             DB_Punishments.getInstance().savePunishment(punishment);
+
+            OfflinePlayer punishedPlayer = Bukkit.getOfflinePlayer(UUID.fromString(punishedPlayerUuid));
 
             String message = "";
             if(override) {
                 message = Messages.get("commands.punish.override");
-                message = message.replaceAll("%player%", punishedPlayer.getDisplayName());
             } else {
                 message = Messages.get("commands.punish.initial");
-                message = message.replaceAll("%player%", punishedPlayer.getDisplayName());
             }
+
+            if(punishedPlayer.isOnline()) {
+                Player player = (Player) punishedPlayer;
+                message = message.replaceAll("%player%", player.getDisplayName());
+            } else if(punishedPlayer.getName() != null) {
+                message = message.replaceAll("%player%", punishedPlayer.getName());
+            } else {
+                message = message.replaceAll("%player%", punishedPlayerName);
+            }
+
             sender.sendMessage(CTUtil.translate(Messages.get("prefix") + "&r " + message));
         } catch(NumberFormatException e) {
             sender.sendMessage(CTUtil.translate(Messages.get("prefix") + "&r " + Messages.get("commands.errors.reason-not-found")));
